@@ -1,8 +1,5 @@
-const req = require("express/lib/request");
 const User = require("../../src/db/Models/Userr");
-const Vegetable = require("../../src/db/Models/Setting");
 const StackHolder = require("../../src/db/Models/Stakeholder");
-
 
 module.exports = {
   index: async (req, res) => {
