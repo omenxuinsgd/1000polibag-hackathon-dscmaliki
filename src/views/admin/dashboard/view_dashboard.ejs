@@ -1,0 +1,211 @@
+<%- include('../../partials/header.ejs') %>
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <%- include('../../partials/sidebar.ejs') %>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+      <!-- Topbar -->
+      <%- include('../../partials/navbar.ejs') %>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <%- include ../../partials/message.ejs %>
+        <!-- Page Heading -->
+        <section id="content">
+          <div class="row mb-2 align-items-center pr-4">
+            <div class="col-sm-6 mr-auto">
+              <h1 class="title-dashboard">Dashboard</h1>
+              <h1 class="subtitle-dashboard">Ayo kelola sistem 1000 polibag</h1>
+            </div>
+            <div class="ml-lg-auto ml-4">
+              <div class="d-flex user-logged nav-item dropdown no-arrow">
+                <a
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="row align-items-center text-center">
+                    <img
+                      src="/images/ic-profile.svg"
+                      alt=""
+                      class="image-profile"
+                    />
+                    <h1 class="user-name"><%= name %></h1>
+                  </div>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuLink"
+                    style="right: 0; left: auto"
+                  >
+                    <li>
+                      <a href="/setting" class="dropdown-item">My Profile</a>
+                    </li> 
+                    <li>
+                      <a href="/logout" class="dropdown-item" onclick=""
+                        >Sign Out</a
+                      >
+                    </li>
+                  </ul>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="row mt-lg-4">
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary py-2">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="ml-2"></div>
+                  <img
+                    src="/images/icon-user.png"
+                    alt=""
+                    height="50"
+                    width="50"
+                  />
+                  <div class="font-weight-medium color-pallete1 ml-2">
+                    Jumlah <br />User
+                  </div>
+                </div>
+
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs text-gray-500 text-uppercase my-2">
+                      Total
+                    </div>
+                    <div class="h5 mb-0 font-weight-medium color-pallete1">
+                      <%= count.user %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success py-2">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="ml-2"></div>
+                  <img
+                    src="/images/icon-vegetable.png"
+                    alt=""
+                    height="50"
+                    width="50"
+                  />
+                  <div class="font-weight-medium color-pallete1 ml-2">
+                    Jumlah <br />Plastik
+                  </div>
+                </div>
+
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs text-gray-500 text-uppercase my-2">
+                      Total
+                    </div>
+                    <div class="h5 mb-0 font-weight-medium color-pallete1">
+                      <%= vegetable1.sum + vegetable2.sum %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning border py-2">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="ml-2"></div>
+                  <img
+                    src="/images/icon-weather.png"
+                    alt=""
+                    height="50"
+                    width="50"
+                  />
+                  <div class="font-weight-medium color-pallete1 ml-2">
+                    Jumlah <br />Masker
+                  </div>
+                </div>
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs text-gray-500 text-uppercase my-2">
+                      Jumlah
+                    </div>
+                    <div class="h5 mb-0 font-weight-medium color-pallete1">
+                      20
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <%- include('../../partials/footer.ejs') %>
+    <!-- End of Footer -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div
+  class="modal fade"
+  id="logoutModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button
+          class="close"
+          type="button"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Select "Logout" below if you are ready to end your current session.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+          Cancel
+        </button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../../partials/button_control.ejs') %>
+<%- include('../../partials/graph2.ejs') %> 
+<%- include('../../partials/js.ejs') %> 
+<%- include('../../partials/graph_gauge.ejs') %> 
+<%- include('../../partials/gauges.ejs') %>
+<%- include('../../partials/graph.ejs') %>
+

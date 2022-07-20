@@ -1,0 +1,24 @@
+<table id="example2" class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Nama User</th>
+      <th>Jenis Tanaman</th>
+      <th>Stock</th>
+      <th>Harga</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < hasilTanam.length; i++){ %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= hasilTanam[i].name_user %></td>
+        <td><%= hasilTanam[i].jenis_tanaman %></td>
+        <td><%= hasilTanam[i].stock %></td>
+        <td><%= hasilTanam[i].harga %></td>
+
+      </tr>
+    <% } %>
+  </tbody>
+</table>

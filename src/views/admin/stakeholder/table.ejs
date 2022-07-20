@@ -1,0 +1,23 @@
+<table id="example2" class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Stake Holder</th>
+      <th>Jenis</th>
+
+      <th>jumlah Distribusi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < stackHolder.length; i++){ %>
+    <tr>
+      <td><%= i + 1 %></td>
+      <td><%= stackHolder[i].name %></td>
+      <td><%= stackHolder[i].stakeholder %></td>
+      <td><%= stackHolder[i].jenis %></td>
+      <td><%= stackHolder[i].jumlahDistribusi %></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
