@@ -1,4 +1,4 @@
-const Sensor = require("../db/Models/Sensor")
+const Sensor = require("../db/Models/Stakeholder")
 const response = require("../helpers/response")
 
 module.exports = {

@@ -5,18 +5,36 @@
       <th>Name</th>
       <th>Stake Holder</th>
       <th>Jenis</th>
-
-      <th>jumlah Distribusi</th>
+      <th>Jumlah Distribusi</th>
+      <th>Aksi</th>
     </tr>
   </thead>
   <tbody>
-    <% for(let i = 0; i < stackHolder.length; i++){ %>
+    <% for(let i = 0; i < stackholder.length; i++){ %>
     <tr>
-      <td><%= image.pngi + 1 %></td>
-      <td><%= stackHolder[i].name %></td>
-      <td><%= stackHolder[i].stakeholder %></td>
-      <td><%= stackHolder[i].jenis %></td>
-      <td><%= stackHolder[i].jumlahDistribusi %></td>
+      <td><%= i + 1 %></td>
+      <td><%= stackholder[i].name %></td>
+      <td><%= stackholder[i].stakeholder %></td>
+      <td><%= stackholder[i].jenis %></td>
+      <td><%= stackholder[i].jumlahDistribusi %></td>
+      <td>
+        <form
+          action="/stakeholder/delete/<%= stackholder[i]._id %>?_method=DELETE"
+          method="POST"
+        >
+          <a
+            href="/stakeholder/edit/<%= stackholder[i]._id %>"
+            class="btn btn-info btn-sm"
+          >
+            <i class="fas fa-pencil-alt"></i>
+            Ubah
+          </a>
+          <button class="btn btn-danger btn-sm">
+            <i class="fas fa-trash"></i>
+            Hapus
+          </button>
+        </form>
+      </td>
     </tr>
     <% } %>
   </tbody>

@@ -14,20 +14,12 @@ var cors = require('cors')
 
 // const dashboardRouter = require("./app/dashboard/router");
 const route = require("./routes")
-const authRouter = require("../app/auth/router");
-
 const adminRouter = require("../app/admin/router");
 const dashboardRouter = require("../app/dashboard/router");
-const lampuRouter = require("../app/lampu/router");
-const userRouter = require("../app/user/router");
-const settingRouter = require("../app/stakeholder/router");
-const hasilTanamRouter = require("../app/hasilTanam/router");
-const waterRouter = require("../app/water/router");
-const keruhRouter = require("../app/air/router");
-const onOfControlRouter = require("../app/onOfManual/router");
-const tanahRouter = require("../app/tanah/router");
+const stakeholderRouter = require("../app/stakeholder/router");
 
-const pumpRouter = require("../app/pump/router");
+const userRouter = require("../app/user/router");
+const hasilTanamRouter = require("../app/hasilTanam/router");
 
 const app = express();
 const URL = `/api/v1`;
@@ -65,32 +57,13 @@ route(app)
 // AKHIR MQTT
 app.use("/", adminRouter);
 app.use("/dashboard", dashboardRouter);
-app.use("/lampu", lampuRouter);
 app.use("/user", userRouter);
-app.use("/stakeholder", settingRouter);
+app.use("/stakeholder", stakeholderRouter);
 app.use("/hasilTanam", hasilTanamRouter);
-app.use("/water", waterRouter);
-app.use("/tanah", tanahRouter);
-app.use("/keruhair", keruhRouter);
-
-// app.use("/dashboard", dashboardRouter);
-
+// app.use("/setting", settingRouter);
 // API
-// API
-// app.use(`${URL}/players`, playerRouter);
-app.use(`${URL}/auth`, authRouter);
-app.use(`${URL}/user`, userRouter);
-
-app.use(`${URL}/lampu`, lampuRouter);
-app.use(`${URL}/tanah`, tanahRouter);
-// app.use(`${URL}/cuaca`, cuacaRouter);
-app.use(`${URL}/pump`, pumpRouter);
-app.use(`${URL}/water`, waterRouter);
-app.use(`${URL}/keruhair`, keruhRouter);
-app.use(`${URL}/onOfManual`, onOfControlRouter);
 
 // Akhir API
-// app.use(`${URL}/setting`, settingRouter);
 
 // Akhir API
 

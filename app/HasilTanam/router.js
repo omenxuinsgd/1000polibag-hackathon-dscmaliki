@@ -1,12 +1,18 @@
 var express = require("express");
 var router = express.Router();
-const { index, updateSuhu, getSuhu, postSuhu } = require("./controller");
+const { index, viewCreate, actionCreate, viewEdit, actionEdit, actionDelete } = require("./controller");
 const { isLoginAdmin } = require('../middleware/auth');
-const multer = require("multer");
-const os = require("os");
 
 // PAGES
 router.get("/",isLoginAdmin, index);
+
+router.get("/create", viewCreate);
+router.post("/create", actionCreate);
+router.get("/edit/:id", viewEdit);
+router.put("/edit/:id", actionEdit);
+router.delete("/delete/:id", actionDelete);
+
+// router.put("/edit/:id", actionEdit);
 
 module.exports = router;
  
